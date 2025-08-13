@@ -21,9 +21,9 @@ const MySearch = () => {
             { threshold: [1] },
         );
 
-        if (sentinelRef.current) {
-            observer.observe(sentinelRef.current);
-        }
+            if (sentinelRef.current) {
+                observer.observe(sentinelRef.current);
+            }
 
         return () => {
             if (sentinelRef.current) {
