@@ -21,14 +21,14 @@ const MyMenu = () => {
     const menuItems = [
         { id: 1, name: t('Home'), link: '/' },
         { id: 2, name: t('Books Collection'), link: '/books_collection' },
-        { id: 3, name: t('Book By Category'), link: '/book_by_categories' },
-        { id: 4, name: t('Support'), link: '/supports' },
+        { id: 3, name: t('Books By Category'), link: '/books_by_category' },
+        { id: 4, name: t('Support'), link: '/support' },
     ];
 
     const getLinkClass = (linkPath: string) =>
         linkPath === activePath
             ? 'text-[#104674] font-semibold underline underline-offset-4'
-            : 'text-black hover:text-[#104674] hover:underline hover:underline-offset-4 transition';
+            : 'md:text-black hover:text-[#104674] hover:underline hover:underline-offset-4 transition';
 
     return (
         <>
@@ -50,13 +50,13 @@ const MyMenu = () => {
                 <Sheet>
                     <SheetTrigger asChild>
                         <Button variant="outline" size="icon" className="p-0">
-                            <AlignLeft className="text-primary-two" width={35} height={35} aria-label="Toggle menu" />
+                            <AlignLeft className="text-[#134571]" width={35} height={35} aria-label="Toggle menu" />
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="left" className="bg-background/20 backdrop-blur-xl">
                         <SheetHeader className="text-start">
                             <SheetTitle className="text-center text-white">Menu</SheetTitle>
-                            <ul className="mt-4 flex flex-col justify-center space-y-4">
+                            <ul className="mt-4 flex flex-col justify-center space-y-4 text-white">
                                 {menuItems.map((item) => (
                                     <li key={item.id}>
                                         <Link

@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import MyCategory from '../Home/components/my-category';
 import ViewMore from './view-more';
 
 interface NftCardProps {
@@ -16,8 +17,8 @@ interface CategoryProps {
 
 const categoriesWithItems: CategoryProps[] = [
     {
-        id: 'newArrive',
-        name: 'New Arrivals',
+        id: 'newArrived',
+        name: 'New Arrived',
         items: [
             { id: '1', imageUrl: 'book1.jpg' },
             { id: '2', imageUrl: 'book2.jpg' },
@@ -34,8 +35,8 @@ const categoriesWithItems: CategoryProps[] = [
         ],
     },
     {
-        id: 'low',
-        name: 'Low Price Items',
+        id: 'law',
+        name: 'Law',
         items: [
             { id: '1', imageUrl: 'book1.jpg' },
             { id: '2', imageUrl: 'book2.jpg' },
@@ -53,7 +54,7 @@ const categoriesWithItems: CategoryProps[] = [
     },
     {
         id: 'economic',
-        name: 'Economic Items',
+        name: 'Economic',
         items: [
             { id: '1', imageUrl: 'book1.jpg' },
             { id: '2', imageUrl: 'book2.jpg' },
@@ -79,12 +80,12 @@ const MyBookCard: React.FC = () => {
                 {categoriesWithItems.map((category) => (
                     <div key={category.id} className="mb-8">
                         {/* Category Header */}
-                        <div className='flex items-center justify-between'>
-                          <h2 className="mb-4 text-2xl font-bold text-gray-900 sm:text-3xl lg:text-2xl dark:text-white">{category.name}</h2>
-                       <div><ViewMore/></div> 
+                        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                            <MyCategory category={category.name} />
+                            <ViewMore />
                         </div>
                         {/* Grid for Items */}
-                        <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                        <div className="mb-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                             {category.items.map((item) => (
                                 <a
                                     key={item.id}

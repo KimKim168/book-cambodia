@@ -12,7 +12,7 @@ const MyNewHeader = () => {
                         <img
                             src={`/assets/demo-images/${application_info}`}
                             alt="logo"
-                            className="w-14 md:w-26 object-cover"
+                            className="w-26 md:w-30 object-cover"
                         />
                     </a>
                     <MyMenu />

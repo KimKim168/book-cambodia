@@ -19,6 +19,21 @@ class BookCambodiaController extends Controller
         return Inertia::render('book-cambodia/Home/Index');
     }
 
+    public function booksCollection()
+    {
+        return Inertia::render('book-cambodia/booksCollection/Index');
+    }
+
+    public function booksByCategory()
+    {
+        return Inertia::render('book-cambodia/booksByCategory/Index');
+    }
+
+    public function support()
+    {
+        return Inertia::render('book-cambodia/support/Index');
+    }
+
     public function detail($id)
     {
         return Inertia::render('book-cambodia/Home/Detail');

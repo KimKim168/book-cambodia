@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button } from './ui/button';
 import { usePage } from '@inertiajs/react';
 import useTranslation from '@/hooks/use-translation';
 import { Search } from 'lucide-react';
+import { Button } from '@/pages/rule-library/components/ui/button';
 
-const MySearch = () => {
+const MySearchDetial = () => {
     const  application_info = 'BookCamboLogo.png';
     const headerRef = useRef(null);
     const sentinelRef = useRef(null);
@@ -33,20 +33,17 @@ const MySearch = () => {
     }, []);
     return (
         <>
-            <div className=" bg-[#002349] ">
-                <div className={`mx-auto text-center max-w-screen-2xl px-3 pt-4 sm:px-10 lg:px-20 text-base text-white sm:text-xl lg:text-2xl ${fontClass}`}>{t('Welcome to Cambodia Book')}</div>
-            </div>
             <div ref={sentinelRef} />
             <div
                 ref={headerRef}
-                className={`sticky top-0 left-0 z-50 w-full backdrop-blur-md transition-all duration-300 ease-in-out ${isSticky ? 'bg-background/50' : 'bg-[#002349]'}`}
+                className={`sticky top-0 left-0 z-50 w-full backdrop-blur-md transition-all duration-300 ease-in-out ${isSticky ? 'bg-background/50' : ''}`}
             >
                 <div className="mx-auto max-w-screen-2xl flex lg:gap-10 items-center justify-center px-3 py-3 sm:px-10 lg:px-20">
                      {isSticky && <a href='/'><img  src={`/assets/demo-images/${application_info}`} className='w-26 lg:w-30'/></a>}
                     <form
                         action="https://elibrary.rac.gov.kh/one_search"
                         method="GET"
-                        className="flex-1 flex flex-row items-center justify-center gap-2 rounded-full border bg-white py-0 pr-0 pl-3 shadow-xl focus-within:ring-1 focus-within:ring-yellow-400"
+                        className="flex-1 flex flex-row items-center justify-center gap-2 rounded-full border bg-white py-0 pr-0 pl-3 shadow-md focus-within:ring-1 focus-within:ring-yellow-400"
                     >    
                         <Search/>
                         <label htmlFor="search-bar" className="sr-only">
@@ -55,7 +52,7 @@ const MySearch = () => {
                         <input
                             id="search-bar"
                             name="search"
-                            placeholder="Search by: Title, ISBN, Author..."
+                            placeholder="Search by: Title..."
                             className="w-full rounded-full bg-white px-4 py-2 text-sm text-black outline-none sm:text-base"
                         />
                         <Button
@@ -67,12 +64,8 @@ const MySearch = () => {
                     </form>
                 </div>
             </div>
-            <div className=" bg-[#002349] ">
-                <div className={`mx-auto max-w-screen-2xl pb-2 px-3 sm:px-10 lg:px-20 text-base text-white ${fontClass}`}>{t('Advance Search')}</div>
-            </div>
-           
         </>
     );
 };
 
-export default MySearch;
+export default MySearchDetial;

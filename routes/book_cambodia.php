@@ -7,6 +7,9 @@ use Inertia\Inertia;
 
 
 Route::get('/', [BookCambodiaController::class, 'index']);
+Route::get('/books_by_category', [BookCambodiaController::class, 'booksByCategory']);
+Route::get('/books_collection', [BookCambodiaController::class, 'booksCollection']);
+Route::get('/support', [BookCambodiaController::class, 'support']);
 Route::get('/detail/{id}', [BookCambodiaController::class, 'detail']);
 
 // Route::get('/about', [RuleLibraryController::class, 'about']);
