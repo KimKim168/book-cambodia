@@ -1,7 +1,9 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
 import Layout from '../bookCamboLayout/layout';
+import { usePage } from '@inertiajs/react';
 
 const Index = () => {
+    const { headingContact, application_info } = usePage().props;
     return (
         <Layout>
             <div className="mx-auto flex flex-col items-center px-4 mt-10">
@@ -19,8 +21,7 @@ const Index = () => {
                     <div>
                         <h4 className="text-xl font-semibold text-gray-900">Our Email</h4>
                         <p className="text-gray-600">
-                            {/* {application_info?.email} */}
-                            info@Example.org
+                            {application_info?.email}
                         </p>
                     </div>
                 </div>
@@ -33,8 +34,7 @@ const Index = () => {
                     <div>
                         <h4 className="text-xl font-semibold text-gray-900">Phone</h4>
                         <p className="text-gray-600">
-                            {/* {application_info?.phone} */}
-                            010*******
+                            {application_info?.phone}
                         </p>
                     </div>
                 </div>
@@ -47,8 +47,7 @@ const Index = () => {
                     <div>
                         <h4 className="text-xl font-semibold text-gray-900">Address</h4>
                         <p className="text-gray-600">
-                            {/* {application_info?.address} */}
-                            123 Main St, Phnom Penh, Cambodia
+                            {application_info?.address}
                         </p>
                     </div>
                 </div>

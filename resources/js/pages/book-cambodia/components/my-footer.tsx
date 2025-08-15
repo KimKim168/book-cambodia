@@ -103,7 +103,7 @@ const MyFooter = () => {
                 {/* Bottom Divider */}
                 <div className="mt-2 md:mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-4 text-sm text-white/60 md:flex-row">
                     <div className={`${fontClass} text-center md:text-left`}>
-                        {locale === 'kh' ? '© 2025 Book Cambodia. All Rights Reserved.' :'© 2025 Book Cambodia. All Rights Reserved.'}
+                        {locale === 'kh' ? (application_info?.copyright_kh ?? application_info?.copyright)  : application_info?.copyright}
                     </div>
                     <div className="text-center md:text-right">
                         Powered by:{' '}
